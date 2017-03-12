@@ -1,0 +1,150 @@
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.2/css/bootstrap-slider.min.css">
+<!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+<style>
+    .slider.slider-horizontal {
+        width: 100%;
+    }
+    
+    .superscript {
+        vertical-align: super;
+        font-size: 10px;
+    }
+    
+    #calculate-button {
+        width: 45%;
+    }
+</style>
+<div class="container">
+    <!-- Cargo Form -->
+    <form id="cargo-form" class="form-horizontal">
+        <!-- Collection -->
+        <div class="form-group">
+            <label class="control-label col-lg-2" for="collection">Collection: </label>
+            <div class="col-lg-4">
+                <select class="form-control" id="collection">
+
+                </select>
+            </div>
+        </div>
+        <!-- Destination -->
+        <div class="form-group">
+            <label class="control-label col-lg-2" for="destination">Destination: </label>
+            <div class="col-lg-4">
+                <select class="form-control" id="destination">
+
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-2" for="cargo-input">Rate: </label>
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="text" class="form-control" id="rate" readonly>
+                </div>
+            </div>
+        </div>
+        <!-- Cargo Size -->
+        <div class="form-group">
+            <div class="col-lg-4 col-lg-offset-2">
+                <input type="text" class="form-control" id="cargo-input" placeholder="Enter cargo size or select from below">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-2" for="cargo-input">Cargo Size: </label>
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="cargo" readonly>
+                    <span class="input-group-addon">m<span class="superscript">3</span></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-4 col-lg-offset-2">
+                <input id="cargo-slider" type="text" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-4 col-lg-offset-3">
+                <button id="calculate-button" type="button" class="btn btn-default">Calculate</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-2" for="cargo-input">Cargo Size: </label>
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <span class="input-group-addon">$</span></span>
+                    <input type="text" class="form-control" id="result">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.2/bootstrap-slider.min.js"></script>
+<script src="csv.js"></script>
+<script>
+    (function () {
+        // Add slider and event handler
+        $('#cargo-slider').slider({
+            min: 0,
+            max: 350000,
+            step: 10000,
+            tooltip: 'hide',
+            ticks: [0, 350000],
+            ticks_labels: ['0', '350000'],
+            handle: 'square'
+        }).change(function () {
+            $('#cargo').val($('#cargo-slider').val());
+            $('#cargo-input').val("");
+        });
+
+        // Add cargo size input handler 
+        $('#cargo-input').change(function () {
+            var cargoVal = $('#cargo-input').val();
+            $('#cargo').val(cargoVal);
+            if (cargoVal >= 0 && cargoVal <= 350000) {
+                $('#cargo-slider').setValue(cargoVal);
+            }
+        });
+
+        // Add collection and destination options from the JSON object
+        var collectionOptions = "",
+            usedCollectionOptions = [],
+            destinationOptions = "",
+            usedDestinationOptions = [];
+        rates.forEach(function (current) {
+            if (usedCollectionOptions.indexOf(current.Collection) == -1) {
+                collectionOptions += '<option value="' + current.Collection + '">' + current.Collection +
+                    '</option>';
+                usedCollectionOptions.push(current.Collection);
+            }
+            if (usedDestinationOptions.indexOf(current.Destination) == -1) {
+                destinationOptions += '<option value="' + current.Destination + '">' + current.Destination +
+                    '</option>';
+                usedDestinationOptions.push(current.Destination);
+            }
+        })
+        $("#collection").append(collectionOptions);
+        $("#destination").append(destinationOptions);
+
+        function getRate(col, dest) {
+            var rate = 0;
+            rates.forEach(function (current) {
+                if (current.Collection === col && current.Destination === dest) {
+                    rate = current.Rate;
+                }
+            });
+            return rate;
+        }
+        
+        $('#calculate-button').click(function() {
+            var rate = getRate($('#collection').val(), $('#destination').val());
+            $('#result').val(rate * $('#cargo').val());
+        })
+    }());
+</script>
