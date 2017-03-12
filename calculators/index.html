@@ -14,6 +14,9 @@
     #calculate-button {
         width: 45%;
     }
+    #alert {
+        display: none;
+    }
 </style>
 <div class="container">
     <!-- Cargo Form -->
@@ -55,7 +58,7 @@
             <label class="control-label col-lg-2" for="cargo-input">Cargo Size: </label>
             <div class="col-lg-4">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="cargo" readonly>
+                    <input type="text" class="form-control" id="cargo" value="100000" readonly>
                     <span class="input-group-addon">m<span class="superscript">3</span></span>
                 </div>
             </div>
@@ -71,13 +74,16 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-lg-2" for="cargo-input">Cargo Size: </label>
+            <label class="control-label col-lg-2" for="cargo-input">Result: </label>
             <div class="col-lg-4">
                 <div class="input-group">
                     <span class="input-group-addon">$</span></span>
                     <input type="text" class="form-control" id="result">
                 </div>
             </div>
+        </div>
+        <div id="alert" class="alert alert-warning col-lg-offset-2">
+            <strong>We are sorry!</strong> but we don't offer services from the above locations.
         </div>
     </form>
 </div>
@@ -101,7 +107,7 @@
         }).change(function () {
             $('#cargo').val($('#cargo-slider').val());
             $('#cargo-input').val("");
-        });
+        }).slider('setValue', 100000);
 
         // Add cargo size input handler 
         $('#cargo-input').change(function () {
@@ -145,6 +151,11 @@
         $('#calculate-button').click(function() {
             var rate = getRate($('#collection').val(), $('#destination').val());
             $('#result').val(rate * $('#cargo').val());
+            if ($('#result').val() == 0) {
+                $('#alert').css('display', 'block');
+            } else {
+                $('#alert').css('display', 'none');
+            }
         })
     }());
 </script>
