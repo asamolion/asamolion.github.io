@@ -1,6 +1,5 @@
 <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.2/css/bootstrap-slider.min.css">
-<!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
 <style>
     .slider.slider-horizontal {
         width: 100%;
@@ -17,14 +16,167 @@
     #alert {
         display: none;
     }
+    #calc-container {
+        display: flex;
+        align-content: center;
+    }
+    #cargo-form {
+        display: inline-block;
+        text-align: center;
+    }
 </style>
+<script>
+// THE RATES
+var rates = [
+ {
+   "Collection": "Jita",
+   "Destination": "1DQ1-A",
+   "Rate": 720
+ },
+ {
+   "Collection": "Jita",
+   "Destination": "7G-QIG",
+   "Rate": 765
+ },
+ {
+   "Collection": "Jita",
+   "Destination": "8RQJ-2",
+   "Rate": 765
+ },
+ {
+   "Collection": "Jita",
+   "Destination": "D-W7F0",
+   "Rate": 720
+ },
+ {
+   "Collection": "Jita",
+   "Destination": "R5-MM8",
+   "Rate": 765
+ },
+ {
+   "Collection": "Amarr",
+   "Destination": "1DQ1-A",
+   "Rate": 523
+ },
+ {
+   "Collection": "Amarr",
+   "Destination": "7G-QIG",
+   "Rate": 540
+ },
+ {
+   "Collection": "Amarr",
+   "Destination": "8RQJ-2",
+   "Rate": 540
+ },
+ {
+   "Collection": "Amarr",
+   "Destination": "D-W7F0",
+   "Rate": 523
+ },
+ {
+   "Collection": "Amarr",
+   "Destination": "R5-MM8",
+   "Rate": 540
+ },
+ {
+   "Collection": "1DQ1-A",
+   "Destination": "Jita",
+   "Rate": 720
+ },
+ {
+   "Collection": "7G-QIG",
+   "Destination": "Jita",
+   "Rate": 765
+ },
+ {
+   "Collection": "8RQJ-2",
+   "Destination": "Jita",
+   "Rate": 765
+ },
+ {
+   "Collection": "D-W7F0",
+   "Destination": "Jita",
+   "Rate": 720
+ },
+ {
+   "Collection": "R5-MM8",
+   "Destination": "Jita",
+   "Rate": 765
+ },
+ {
+   "Collection": "1DQ1-A",
+   "Destination": "Amarr",
+   "Rate": 495
+ },
+ {
+   "Collection": "7G-QIG",
+   "Destination": "Amarr",
+   "Rate": 540
+ },
+ {
+   "Collection": "8RQJ-2",
+   "Destination": "Amarr",
+   "Rate": 540
+ },
+ {
+   "Collection": "D-W7F0",
+   "Destination": "Amarr",
+   "Rate": 495
+ },
+ {
+   "Collection": "R5-MM8",
+   "Destination": "Amarr",
+   "Rate": 540
+ },
+ {
+   "Collection": "7G-QIG",
+   "Destination": "1DQ1-A",
+   "Rate": 90
+ },
+ {
+   "Collection": "8RQJ-2",
+   "Destination": "1DQ1-A",
+   "Rate": 90
+ },
+ {
+   "Collection": "D-W7F0",
+   "Destination": "1DQ1-A",
+   "Rate": 90
+ },
+ {
+   "Collection": "R5-MM8",
+   "Destination": "1DQ1-A",
+   "Rate": 90
+ },
+ {
+   "Collection": "1DQ1-A",
+   "Destination": "7G-QIG",
+   "Rate": 90
+ },
+ {
+   "Collection": "1DQ1-A",
+   "Destination": "8RQJ-2",
+   "Rate": 90
+ },
+ {
+   "Collection": "1DQ1-A",
+   "Destination": "D-W7F0",
+   "Rate": 90
+ },
+ {
+   "Collection": "1DQ1-A",
+   "Destination": "R5-MM8",
+   "Rate": 90
+ }
+]
+</script>
 <div class="container">
     <!-- Cargo Form -->
-    <form id="cargo-form" class="form-horizontal">
+    <form id="cargo-form" class="form-horizontal col-lg-6 col-lg-offset-2 col-md-8 col-md-offset-1 col-xs-12">
         <!-- Collection -->
         <div class="form-group">
-            <label class="control-label col-lg-2" for="collection">Collection: </label>
-            <div class="col-lg-4">
+            <label class="control-label col-lg-4" for="collection">Collection: </label>
+            <div class="col-lg-8">
                 <select class="form-control" id="collection">
 
                 </select>
@@ -32,31 +184,28 @@
         </div>
         <!-- Destination -->
         <div class="form-group">
-            <label class="control-label col-lg-2" for="destination">Destination: </label>
-            <div class="col-lg-4">
+            <label class="control-label col-lg-4" for="destination">Destination: </label>
+            <div class="col-lg-8">
                 <select class="form-control" id="destination">
 
                 </select>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-lg-2" for="cargo-input">Rate: </label>
-            <div class="col-lg-4">
-                <div class="input-group">
-                    <span class="input-group-addon">$</span>
-                    <input type="text" class="form-control" id="rate" readonly>
-                </div>
+            <label class="control-label col-lg-4" for="cargo-input">Rate: </label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" id="rate" value="720" readonly>
             </div>
         </div>
         <!-- Cargo Size -->
         <div class="form-group">
-            <div class="col-lg-4 col-lg-offset-2">
-                <input type="text" class="form-control" id="cargo-input" placeholder="Enter cargo size or select from below">
+            <div class="col-lg-8 col-lg-offset-4">
+                <input type="number" class="form-control" id="cargo-input" placeholder="Enter cargo size or select from below">
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-lg-2" for="cargo-input">Cargo Size: </label>
-            <div class="col-lg-4">
+            <label class="control-label col-lg-4" for="cargo-input">Cargo Size: </label>
+            <div class="col-lg-8">
                 <div class="input-group">
                     <input type="text" class="form-control" id="cargo" value="100000" readonly>
                     <span class="input-group-addon">m<span class="superscript">3</span></span>
@@ -64,22 +213,19 @@
             </div>
         </div>
         <div class="form-group">
-            <div class="col-lg-4 col-lg-offset-2">
+            <div class="col-lg-8 col-lg-offset-4">
                 <input id="cargo-slider" type="text" />
             </div>
         </div>
         <div class="form-group">
-            <div class="col-lg-4 col-lg-offset-3">
+            <div class="col-lg-8 col-lg-offset-4">
                 <button id="calculate-button" type="button" class="btn btn-default">Calculate</button>
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-lg-2" for="cargo-input">Result: </label>
-            <div class="col-lg-4">
-                <div class="input-group">
-                    <span class="input-group-addon">$</span></span>
-                    <input type="text" class="form-control" id="result">
-                </div>
+            <label class="control-label col-lg-4" for="cargo-input">Result: </label>
+            <div class="col-lg-8">                
+                <input type="text" class="form-control" id="result" readonly>
             </div>
         </div>
         <div id="alert" class="alert alert-warning col-lg-offset-2">
@@ -87,12 +233,9 @@
         </div>
     </form>
 </div>
-
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.2/bootstrap-slider.min.js"></script>
-<script src="csv.js"></script>
 <script>
     (function () {
         // Add slider and event handler
@@ -110,11 +253,11 @@
         }).slider('setValue', 100000);
 
         // Add cargo size input handler 
-        $('#cargo-input').change(function () {
+        $('#cargo-input').on('input', function () {
             var cargoVal = $('#cargo-input').val();
             $('#cargo').val(cargoVal);
             if (cargoVal >= 0 && cargoVal <= 350000) {
-                $('#cargo-slider').setValue(cargoVal);
+                $('#cargo-slider').slider('setValue', cargoVal);
             }
         });
 
@@ -137,6 +280,14 @@
         })
         $("#collection").append(collectionOptions);
         $("#destination").append(destinationOptions);
+
+        // Add rate event handlers
+        $('#collection').change(function() {
+            $('#rate').val(getRate($('#collection').val(), $('#destination').val()));
+        });
+        $('#destination').change(function() {
+            $('#rate').val(getRate($('#collection').val(), $('#destination').val()));
+        })
 
         function getRate(col, dest) {
             var rate = 0;
