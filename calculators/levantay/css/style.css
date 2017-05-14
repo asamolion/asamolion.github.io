@@ -1,0 +1,62 @@
+@import url(https://fonts.googleapis.com/css?family=Oranienbaum);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
+.heading,
+.sub-heading {
+    font-family: Oranienbaum, Georgia;
+    font-weight: bold;
+    text-align: center;
+    color: #660066;
+}
+
+.form-header h3 {
+    font-family: Oranienbaum, Georgia;
+    font-weight: bold;
+    text-align: left;
+}
+
+.rating-chart {
+    font-weight: bold;
+}
+
+.rating-list {
+    list-style-type: none;
+    cursor: default;
+}
+
+.rating-list li {
+    display: inline;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 5px;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.rating-list li.active {
+    color: deepskyblue;
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+    font-size: 1.2em;
+}
+
+.form-footer {
+    font-weight: bold;
+}
+
+.categoryResultLabel {
+    font-family: Oranienbaum, Georgia;
+    font-weight: bold;
+    font-size: 2em;
+    font-weight: 900;
+}
+
+.note {
+    font-weight: bold;
+}
+
+#cat1Score,
+#cat2Score {
+    font-size: 1.8em;
+}

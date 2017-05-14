@@ -1,0 +1,388 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Challenge Personality Assessment</title>
+    <meta charset="utf-8">
+
+    <!--    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!--
+    <nav class="navbar navbar-default">
+    <div class="navbar-header">
+        <img src="img/header.png" class="img-responsive" alt="Levantay">
+    </div>
+</nav>
+-->
+    <header class="container">
+        <h1 class="heading">CHALLENGE PERSONALITY ASSESSMENT™</h1>
+        <h2 class="sub-heading">Your attitude towards challenges is key to your success. What is your challenge personality? </h2>
+        <p>Have you ever attempted anything important in life without facing challenges? The key to success lies in how you respond to these inevitable challenges. Your challenge personality will determine whether you fail or succeed. Take this assessment to find out what your challenge personality is and how it determines your level of success.</p>
+    </header>
+    <div class="container">
+        <div class="row form-header">
+            <div class="col-lg-2">
+                <h3>Category 1</h3>
+            </div>
+            <div class="rating-chart col-lg-3 col-lg-offset-7">
+                <h3>Ratings</h3>
+                <p>10=Very Much, 1=Not at all</p>
+            </div>
+        </div>
+        <form id="category1Form" class="form-horizontal">
+            <hr>
+            <div class="form-group">
+                <label for="question1" class="control-label col-lg-8 col-md-8">1. I see life as an adventure and I am always excited for change</label>
+                <input type="hidden" id="question1" name="question1" value="1">
+                <div class="col-lg-4 col-md-4">
+                    <ul class="rating-list">
+                        <li data-question="1" class="active">1</li>
+                        <li data-question="1">2</li>
+                        <li data-question="1">3</li>
+                        <li data-question="1">4</li>
+                        <li data-question="1">5</li>
+                        <li data-question="1">6</li>
+                        <li data-question="1">7</li>
+                        <li data-question="1">8</li>
+                        <li data-question="1">9</li>
+                        <li data-question="1">10</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="question2" class="control-label col-lg-8 col-md-8">2. I never get stressed out I always apply a spirit of play to everything I do</label>
+                <input type="hidden" id="question2" name="question2" value="1">
+                <div class="col-lg-4 col-md-4">
+                    <ul class="rating-list">
+                        <li data-question="2" class="active">1</li>
+                        <li data-question="2">2</li>
+                        <li data-question="2">3</li>
+                        <li data-question="2">4</li>
+                        <li data-question="2">5</li>
+                        <li data-question="2">6</li>
+                        <li data-question="2">7</li>
+                        <li data-question="2">8</li>
+                        <li data-question="2">9</li>
+                        <li data-question="2">10</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="question3" class="control-label col-lg-8">3. When I experience change I always think about what I will gain from it </label>
+                <input type="hidden" id="question3" name="question3" value="1">
+                <div class="col-lg-4 col-md-4">
+                    <ul class="rating-list">
+                        <li data-question="3" class="active">1</li>
+                        <li data-question="3">2</li>
+                        <li data-question="3">3</li>
+                        <li data-question="3">4</li>
+                        <li data-question="3">5</li>
+                        <li data-question="3">6</li>
+                        <li data-question="3">7</li>
+                        <li data-question="3">8</li>
+                        <li data-question="3">9</li>
+                        <li data-question="3">10</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="question4" class="control-label col-lg-8 col-md-8">4. I always celebrate my little wins just as much as the big ones</label>
+                <input type="hidden" id="question4" name="question4" value="1">
+                <div class="col-lg-4 col-md-4">
+                    <ul class="rating-list">
+                        <li data-question="4" class="active">1</li>
+                        <li data-question="4">2</li>
+                        <li data-question="4">3</li>
+                        <li data-question="4">4</li>
+                        <li data-question="4">5</li>
+                        <li data-question="4">6</li>
+                        <li data-question="4">7</li>
+                        <li data-question="4">8</li>
+                        <li data-question="4">9</li>
+                        <li data-question="4">10</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="question5" class="control-label col-lg-8 ">5. I am coachable and willing to learn from others</label>
+                <div class="col-lg-4">
+                    <input type="hidden" id="question5" name="question5" value="1">
+                    <ul class="rating-list">
+                        <li data-question="5" class="active">1</li>
+                        <li data-question="5">2</li>
+                        <li data-question="5">3</li>
+                        <li data-question="5">4</li>
+                        <li data-question="5">5</li>
+                        <li data-question="5">6</li>
+                        <li data-question="5">7</li>
+                        <li data-question="5">8</li>
+                        <li data-question="5">9</li>
+                        <li data-question="5">10</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="question6" class="control-label col-lg-8 ">6. I often focus on what’s going right rather than what’s going wrong</label>
+                <div class="col-lg-4">
+                    <input type="hidden" id="question6" name="question6" value="1">
+                    <ul class="rating-list">
+                        <li data-question="6" class="active">1</li>
+                        <li data-question="6">2</li>
+                        <li data-question="6">3</li>
+                        <li data-question="6">4</li>
+                        <li data-question="6">5</li>
+                        <li data-question="6">6</li>
+                        <li data-question="6">7</li>
+                        <li data-question="6">8</li>
+                        <li data-question="6">9</li>
+                        <li data-question="6">10</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="question7" class="control-label col-lg-8 ">7. I am not afraid of uncertainty. I rely on my strong faith to guide me through tough challenges</label>
+                <div class="col-lg-4">
+                    <input type="hidden" id="question7" name="question7" value="1">
+                    <ul class="rating-list">
+                        <li data-question="7" class="active">1</li>
+                        <li data-question="7">2</li>
+                        <li data-question="7">3</li>
+                        <li data-question="7">4</li>
+                        <li data-question="7">5</li>
+                        <li data-question="7">6</li>
+                        <li data-question="7">7</li>
+                        <li data-question="7">8</li>
+                        <li data-question="7">9</li>
+                        <li data-question="7">10</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="question8" class="control-label col-lg-8 ">8. I surround myself with a supportive group of people who I can rely on to cheer me on when I face resistance</label>
+                <div class="col-lg-4">
+                    <input type="hidden" id="question8" name="question8" value="1">
+                    <ul class="rating-list">
+                        <li data-question="8" class="active">1</li>
+                        <li data-question="8">2</li>
+                        <li data-question="8">3</li>
+                        <li data-question="8">4</li>
+                        <li data-question="8">5</li>
+                        <li data-question="8">6</li>
+                        <li data-question="8">7</li>
+                        <li data-question="8">8</li>
+                        <li data-question="8">9</li>
+                        <li data-question="8">10</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row form-footer">
+                <div class="result-caption col-lg-4 col-lg-offset-6">
+                    <label for="cat1Result" class="categoryResultLabel">CATEGORY 1 TOTAL SCORE:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input type="text" id="cat1Score" name="cat1Result" class="form-control" placeholder="Score">
+                </div>
+            </div>
+        </form>
+        <hr>
+    </div>
+
+
+
+
+    <div class="container">
+        <div class="row form-header">
+            <div class="col-lg-2">
+                <h3>Category 2</h3>
+            </div>
+        </div>
+
+        <form id="category2Form" class="form-horizontal">
+            <hr>
+            <div class="form-group">
+                <label for="question11" class="control-label col-lg-8 ">1. When I experience change it often feels painful</label>
+                <div class="col-lg-4">
+                    <input type="hidden" id="question11" name="question11" value="1">
+                    <ul class="rating-list">
+                        <li data-question="11" class="active">1</li>
+                        <li data-question="11">2</li>
+                        <li data-question="11">3</li>
+                        <li data-question="11">4</li>
+                        <li data-question="11">5</li>
+                        <li data-question="11">6</li>
+                        <li data-question="11">7</li>
+                        <li data-question="11">8</li>
+                        <li data-question="11">9</li>
+                        <li data-question="11">10</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="question12" class="control-label col-lg-8 ">2. I’m excited about things I am naturally good at but when I am challenged I doubt my abilities</label>
+                <div class="col-lg-4">
+                    <input type="hidden" id="question12" name="question12" value="1">
+                    <ul class="rating-list">
+                        <li data-question="12" class="active">1</li>
+                        <li data-question="12">2</li>
+                        <li data-question="12">3</li>
+                        <li data-question="12">4</li>
+                        <li data-question="12">5</li>
+                        <li data-question="12">6</li>
+                        <li data-question="12">7</li>
+                        <li data-question="12">8</li>
+                        <li data-question="12">9</li>
+                        <li data-question="12">10</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="question13" class="control-label col-lg-8 ">3. When faced with a challenge I often get lost in thought instead of taking action </label>
+                <div class="col-lg-4">
+                    <input type="hidden" id="question13" name="question13" value="1">
+                    <ul class="rating-list">
+                        <li data-question="13" class="active">1</li>
+                        <li data-question="13">2</li>
+                        <li data-question="13">3</li>
+                        <li data-question="13">4</li>
+                        <li data-question="13">5</li>
+                        <li data-question="13">6</li>
+                        <li data-question="13">7</li>
+                        <li data-question="13">8</li>
+                        <li data-question="13">9</li>
+                        <li data-question="13">10</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="question14" class="control-label col-lg-8 ">4. When I experience uncertainty I often feel like giving up</label>
+                <div class="col-lg-4">
+                    <input type="hidden" id="question14" name="question14" value="1">
+                    <ul class="rating-list">
+                        <li data-question="14" class="active">1</li>
+                        <li data-question="14">2</li>
+                        <li data-question="14">3</li>
+                        <li data-question="14">4</li>
+                        <li data-question="14">5</li>
+                        <li data-question="14">6</li>
+                        <li data-question="14">7</li>
+                        <li data-question="14">8</li>
+                        <li data-question="14">9</li>
+                        <li data-question="14">10</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="question15" class="control-label col-lg-8 ">5. I usually get stressed out when things get tough</label>
+                <div class="col-lg-4">
+                    <input type="hidden" id="question15" name="question15" value="1">
+                    <ul class="rating-list">
+                        <li data-question="15" class="active">1</li>
+                        <li data-question="15">2</li>
+                        <li data-question="15">3</li>
+                        <li data-question="15">4</li>
+                        <li data-question="15">5</li>
+                        <li data-question="15">6</li>
+                        <li data-question="15">7</li>
+                        <li data-question="15">8</li>
+                        <li data-question="15">9</li>
+                        <li data-question="15">10</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="question16" class="control-label col-lg-8 ">6. I often let fear stop me from taking positive action</label>
+                <div class="col-lg-4">
+                    <input type="hidden" id="question16" name="question16" value="1">
+                    <ul class="rating-list">
+                        <li data-question="16" class="active">1</li>
+                        <li data-question="16">2</li>
+                        <li data-question="16">3</li>
+                        <li data-question="16">4</li>
+                        <li data-question="16">5</li>
+                        <li data-question="16">6</li>
+                        <li data-question="16">7</li>
+                        <li data-question="16">8</li>
+                        <li data-question="16">9</li>
+                        <li data-question="16">10</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="question17" class="control-label col-lg-8 ">7. I must have a specific and clear vision to break through challenges</label>
+                <div class="col-lg-4">
+                    <input type="hidden" id="question17" name="question17" value="1">
+                    <ul class="rating-list">
+                        <li data-question="17" class="active">1</li>
+                        <li data-question="17">2</li>
+                        <li data-question="17">3</li>
+                        <li data-question="17">4</li>
+                        <li data-question="17">5</li>
+                        <li data-question="17">6</li>
+                        <li data-question="17">7</li>
+                        <li data-question="17">8</li>
+                        <li data-question="17">9</li>
+                        <li data-question="17">10</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="question18" class="control-label col-lg-8 ">8. Small wins do not excite me they remind me of how far I am from my big goal</label>
+                <div class="col-lg-4">
+                    <input type="hidden" id="question18" name="question18" value="1">
+                    <ul class="rating-list">
+                        <li data-question="18" class="active">1</li>
+                        <li data-question="18">2</li>
+                        <li data-question="18">3</li>
+                        <li data-question="18">4</li>
+                        <li data-question="18">5</li>
+                        <li data-question="18">6</li>
+                        <li data-question="18">7</li>
+                        <li data-question="18">8</li>
+                        <li data-question="18">9</li>
+                        <li data-question="18">10</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row form-footer">
+                <div class="result-caption col-lg-4 col-lg-offset-6">
+                    <label for="cat2Result" class="categoryResultLabel">CATEGORY 2 TOTAL SCORE:</label>
+                </div>
+                <div class="col-lg-2">
+                    <input type="text" id="cat2Score" name="cat2Result" class="form-control" placeholder="Score">
+                </div>
+            </div>
+        </form>
+        <hr>
+    </div>
+
+    <div class="container note">
+        <p>Results:</p>
+
+        <p>Grab your scores and head back to the video training where I will explain your scores’ meaning in greater depth and give you tips and guidance to developing the mindset of peak performers so that you can achieve explosive success. </p>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!--    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
