@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="css/grid12.css">
+<link rel="stylesheet" type="text/css" href="calc.css">
+<div id="calc">
+    <h3 class="center">Mortgage Calculator</h1>
+        <div class="row">
+            <div class="label-div col-lg-5">
+                <label for="mortgage">Mortgage Value ($)</label>
+            </div>
+            <input class="col-lg-6" type="number" name="mortgage" id="mortgage" value="1000">
+        </div>
+        <br>
+        <div class="row">
+            <div class="label-div col-lg-5">
+                <label for="term">Loan Term (Years)</label>
+            </div>
+            <input class="col-lg-6" type="number" name="term" id="term" value="5">
+        </div>
+        <br>
+        <div class="row">
+            <div class="label-div col-lg-5">
+                <label for="rate">Interest Rate (%)</label>
+            </div>
+            <input class="col-lg-6" type="number" name="rate" id="rate" value="1">
+        </div>
+        <br>
+        <div>
+            <select id="calculationType">
+                <option value="1">Capital &amp; Interest</option>
+                <option value="2">Interest Only</option>
+            </select>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="row">
+            <div class="label-div col-lg-5">
+                <label for="monthly">Monthly Payment</label>
+            </div>
+            <input class="col-lg-6" type="number" name="monthly" id="monthly" value="0">
+        </div>
+        <br>
+        <div class="row">
+            <div class="label-div col-lg-5">
+                <label for="total">Total Repayment</label>
+            </div>
+            <input class="col-lg-6" type="number" name="total" id="total" value="0">
+        </div>
+        <br>
+        <div class="row">
+            <div class="label-div col-lg-5">
+                <label for="interest">Total Interest Paid</label>
+            </div>
+            <input class="col-lg-6" type="number" name="interest" id="interest" value="0">
+        </div>
+</div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="calc.js"></script>

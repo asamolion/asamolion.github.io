@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="calc.css">
+
+<div id="calc" class="container" style="width:100%;">
+    <br />
+    <div class="row">
+        <!-- <h4 class="center">Burgess Technologies Image Archive Bandwidth Tool</h4> -->
+        <form class="form-horizontal">
+            <!-- Select Camera -->
+            <div class="form-group">
+                <label for="resolution" class="control-label col-md-4">Camera Resolution</label>
+                <div class="col-md-8">
+                    <div id="resolution-btn-group" class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info active"><input name="resolution" checked="checked" type="radio" value="500">4MP</label>
+                        <label class="btn btn-info"><input name="resolution" type="radio" value="600">5MP</label>
+                        <label class="btn btn-info"><input name="resolution" type="radio" value="1000">8MP</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Image Captye Frequency -->
+            <div class="form-group">
+                <label for="frequency" class="control-label col-md-4">Image Capture Frequency in Minutes, Every</label>
+                <div class="col-md-8">
+                    <select id="frequency" class="form-control"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="days-per-week" class="control-label col-md-4">Number of Days the Camera is Operational (per week)</label>
+                <div class="col-md-8">
+                    <select id="days-per-week" class="form-control">
+                      <option value="5">5</option>
+                      <option value="7">7</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="weeks-per-year" class="control-label col-md-4">How many weeks storage (per year)</label>
+                <div class="col-md-8">
+                    <select id="weeks-per-year" class="form-control"><select>
+                </div>
+            </div>
+        </form>
+        <h4 class="center"><strong>TOTAL DATA SENT AND STORED = <span id="result"></span></strong></h4>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="calc.js"></script>

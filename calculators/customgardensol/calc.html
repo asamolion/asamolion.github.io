@@ -1,0 +1,95 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<div id="calc" class="container">
+    <!-- Water Volume Form -->
+    <div class="row">
+        <h2>Calculate Compost</h2>
+        <form id="compost-form" class="form-horizontal">
+            <!-- Measurement -->
+            <div class="form-group">
+                <label for="measurement" class="control-label col-md-2">Calculate for</label>
+                <div class="col-md-4">
+                    <div id="measurement-btn-group" class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info active"><input name="measurement" checked="checked" type="radio" value="rectangle">Rectangular Area</label>
+                        <label class="btn btn-info"><input name="measurement" type="radio" value="circle">Circular Area</label>
+                    </div>
+                </div>
+            </div>
+            <div id="rectangle-parameters">
+                <!-- Length -->
+                <div class="form-group">
+                    <label for="length" class="control-label col-md-2">Length</label>
+                    <div class="col-md-4">
+                        <input id="length" type="number" class="form-control" name="length" placeholder="Feet">
+                    </div>
+                </div>
+                <!-- Width -->
+                <div class="form-group">
+                    <label for="width" class="control-label col-md-2">Width</label>
+                    <div class="col-md-4">
+                        <input id="width" type="number" class="form-control" name="width" placeholder="Feet">
+                    </div>
+                </div>
+            </div>
+            <div id="circle-parameters" style="display:none">
+                <!-- Diameter -->
+                <div class="form-group">
+                    <label for="diameter" class="control-label col-md-2">Diameter</label>
+                    <div class="col-md-4">
+                        <input id="diameter" type="number" class="form-control" name="diameter" placeholder="Feet">
+                    </div>
+                </div>
+            </div>
+            <!-- Depth -->
+            <div class="form-group">
+                <label for="depth" class="control-label col-md-2">Depth</label>
+                <div class="col-md-4">
+                    <input id="depth" type="number" class="form-control" name="depth" placeholder="Inches">
+                </div>
+            </div>
+            <!-- Cubic yards of compost -->
+            <div class="form-group">
+                <label for="compost" class="control-label col-md-2">You will need</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input id="compost" type="text" class="form-control" name="compost">
+                        <span class="input-group-addon">Cubic Yards</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+(function () {
+    $('#measurement-btn-group').change(function () {
+        if ($('input[name="measurement"]:checked').val() === 'rectangle') {
+            $('#circle-parameters').fadeOut(function () {
+                $('#rectangle-parameters').fadeIn();
+            });
+
+        } else {
+            $('#rectangle-parameters').fadeOut(function () {
+                $('#circle-parameters').fadeIn();
+            });
+        }
+    });
+
+    $('#calc').change(function () {
+        if ($('input[name="measurement"]:checked').val() === 'rectangle') {
+            var length = $('#length').val(),
+                width = $('#width').val(),
+                depth = $('#depth').val(),
+                cubicYards = length * width * depth * 0.0031;
+            $('#compost').val(cubicYards.toFixed(6));
+        } else {
+            var diameter = $('#diameter').val(),
+                depth = $('#depth').val(),
+                area = 3.14159 * Math.pow(diameter / 2, 2);
+            cubicYards = area * depth * 0.0031;
+            $('#compost').val(cubicYards.toFixed(6));
+        }
+    });
+}());
+</script>

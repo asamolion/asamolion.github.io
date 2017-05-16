@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+
+<head>
+    <title>Lazer Cutter Form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header container-fluid">
+        <a href="http://www.makelasergifts.com">
+            <img class="logo" src="img/logo.png" alt="Learn Create Sell">
+        </a>
+        <p>Personalised laser cut and engraved gifts. We are a social enterprise supporting Sheffield unemployed creatives to
+            learn digital fabrication, create personalised products and sell them on this platform.</p>
+    </header>
+
+    <div id="main" class="container-fluid">
+        <div class="row">
+            <h4 class="heading">We understand that in a fast-paced world, the need for a speedy service is paramount! </h4>
+            <h4 class="heading">Welcome to our estimation tool, this will guide you in pricing your laser cutting / engraving project and generate an estimate in 60 seconds!</h4>
+            <br>
+            <div class="form-div col-lg-6 col-lg-offset-3">
+                <form id="lazer-cutter-form" method="POST" enctype="multipart/form-data">
+                    <!-- Fieldset 1-->
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="business">Business</label>
+                            <input type="text" class="form-control" name="business">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-name">Project Name</label>
+                            <input type="text" class="form-control" name="projectName">
+                        </div>
+                        <div class="form-group">
+                            <p>Disclaimer: This estimation form is not a guarantee of cost for services. Your estimate cost is based
+                                on current information from you about the project requirements. Actual cost may change
+                                once project elements are finalised. Client will be notified of any changes in cost prior to
+                                them being incurred.</p>
+                            <div class="checkbox">
+                                <label for="disclaimer"><input type="checkbox" name="disclaimer" value="">I agree</label>
+                            </div>
+                        </div>
+                        <button id="nextStep1" type="button" class="btn btn-default btn-lg">Next</button>
+                    </fieldset>
+
+                    <!-- Fieldset 2-->
+                    <fieldset>
+                        <!-- Material -->
+                        <div class="form-group">
+                            <label for="material">Material</label>
+                            <select id="material" class="form-control" name="material">
+                                <option value="perspex">Perspex</option>
+                                <option value="perspex-coloured">Perspex Coloured</option>
+                                <option value="wood-mdf">Wood MDF</option>
+                                <option value="wood-plywood">Wood Plywood</option>
+                                <option value="custom-board">Custom Mount Board Card</option>
+                                <option value="other">Other material - please specify</option>
+                            </select>
+                        </div>
+                        <!-- Other material -->
+                        <div id="div-other-material" class="form-group">
+                            <label for="other-material">Other material</label>
+                            <input type="text" class="form-control" name="other-material" placeholder="Please specify material">
+                        </div>
+                        <div class="form-group">
+                            <label for="cost">Cost</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">&pound;</span>
+                                <input id="cost" type="text" class="form-control" name="cost" value="10" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="colour">Colour</label>
+                            <select name="colour" id="colour" class="form-control">
+                                <option value="clear">Clear</option>
+                                <option value="clear-frosted">Clear Frosted</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="thickness">Thickness</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" name="thickness" value="3" readonly>
+                                <span class="input-group-addon">mm</span>
+                            </div>
+                        </div>
+                        <button id="prevStep2" type="button" class="btn btn-default btn-lg">Previous</button>
+                        <button id="nextStep2" type="button" class="btn btn-default btn-lg">Next</button>
+                    </fieldset>
+
+                    <!-- Fieldset 3 -->
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="engraving">Engraving</label>
+                            <select name="engraving" id="engraving" class="form-control">
+                                <option value="wood">Wood</option>
+                                <option value="perspex">Perspex</option>
+                                <option value="anodized aluminum">Anodized Aluminum</option>
+                                <option value="leather">Leather</option>
+                                <option value="cardboard">Cardboard</option>
+                                <option value="paper">Paper</option>
+                                <option value="enamel rotary">Enamal Rotary</option>
+                                <option value="glass flat">Glass Flat</option>
+                                <option value="glass rotary">Glass Rotary</option>
+                                <option value="not-required">Not Required</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="engraving-artwork-size">Artwork Size (mm)</label>
+                            <select name="engraving-artwork-size" class="form-control" id="engraving-artwork-size">
+                                <option value="a2">A2 (420*594)</option>
+                                <option value="a3">A3 (297*420)</option>
+                                <option value="a4">A4 (210*297)</option>
+                                <option value="a5">A5 (148*210)</option>
+                                <option value="a6">A6 (105*146)</option>
+                                <option value="a7">A7 (74*105)</option>
+                                <option value="a8">A8 (52*74)</option>
+                                <option value="a9">A9 (37*52)</option>
+                                <option value="a10">A10 (26*37)</option>
+                                <option value="30x30">30x30</option>
+                                <option value="25x30">25x30</option>
+                                <option value="25x25">25x25</option>
+                                <option value="20x25">20x25</option>
+                                <option value="20x20">20x20</option>
+                                <option value="15x20">15x20</option>
+                                <option value="15x15">15x15</option>
+                                <option value="10x10">10x10</option>
+                                <option value="5x10">5x10</option>
+                                <option value="5x5">5x5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="engraving-time">Time</label>
+                            <div class="input-group">
+                                <input type="text" name="engraving-time" class="form-control" value="66" readonly>
+                                <span class="input-group-addon">minutes</span>
+                            </div>
+                        </div>
+                        <button id="prevStep3" type="button" class="btn btn-default btn-lg">Previous</button>
+                        <button id="nextStep3" type="button" class="btn btn-default btn-lg">Next</button>
+                    </fieldset>
+                    <!-- Fieldset 4 -->
+                    <fieldset>  
+                        <div class="form-group">
+                            <label for="cutting">Cutting</label>
+                            <select name="cutting" id="cutting" class="form-control">
+                                <option value="perspex">Perspex</option>
+                                <option value="wood">Wood</option>
+                                <option value="cardboard">Mountboard Card</option>
+                                <option value="not-required">Not Required</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="cutting-artwork-size">Artwork Size (mm)</label>
+                            <select name="cutting-artwork-size" class="form-control" id="cutting-artwork-size">
+                                <option value="a2">A2 (420*594)</option>
+                                <option value="a3">A3 (297*420)</option>
+                                <option value="a4">A4 (210*297)</option>
+                                <option value="a5">A5 (148*210)</option>
+                                <option value="a6">A6 (105*146)</option>
+                                <option value="a7">A7 (74*105)</option>
+                                <option value="a8">A8 (52*74)</option>
+                                <option value="a9">A9 (37*52)</option>
+                                <option value="a10">A10 (26*37)</option>
+                                <option value="30x30">30x30</option>
+                                <option value="25x30">25x30</option>
+                                <option value="25x25">25x25</option>
+                                <option value="20x25">20x25</option>
+                                <option value="20x20">20x20</option>
+                                <option value="15x20">15x20</option>
+                                <option value="15x15">15x15</option>
+                                <option value="10x10">10x10</option>
+                                <option value="5x10">5x10</option>
+                                <option value="5x5">5x5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="cutting-time">Time</label>
+                            <div class="input-group">
+                                <input type="text" name="cutting-time" class="form-control" value="66" readonly>
+                                <span class="input-group-addon">minutes</span>
+                            </div>
+                        </div>
+                        <button id="prevStep4" type="button" class="btn btn-default btn-lg">Previous</button>
+                        <button id="nextStep4" type="button" class="btn btn-default btn-lg">Next</button>
+                    </fieldset>
+
+                    <!-- Fieldset 5 -->
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="description">Further information / Project description</label>
+                            <textarea rows="5" class="form-control" name="description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="artwork">Attachment (Attach any relevant artwork)</label>
+                            <input type="file" class="form-control" name="artwork" id="artwork">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail address: (Email will be sent to this address)</label>
+                            <input type="email" class="form-control" name="email" value="">
+                        </div>
+                        <input id="material-cost" type="hidden" name="material-cost" value="10">
+                        <input id="laser-engraving-cost" type="hidden" name="laser-engraving-cost" value="66">
+                        <input id="laser-cutting-cost" type="hidden" name="laser-cutting-cost" value="66">
+                        <button id="prevStep5" type="button" class="btn btn-default btn-lg">Previous</button>
+                        <button type="submit" class="btn btn-default btn-lg">Submit</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="timetable.js"></script>
+    <script src="app.js"></script>
+</body>

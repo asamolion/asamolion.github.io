@@ -1,0 +1,177 @@
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
+
+<div class="container">
+    <!-- Water Volume Form -->
+    <div class="row">
+        <h2>Calculate Water Volume</h2>
+        <form id="water-volume-form" class="form-horizontal">
+            <!-- Measurement -->
+            <div class="form-group">
+                <label for="measurement" class="control-label col-md-2">Measurement</label>
+                <div class="col-md-4">
+                    <div id="measurement-btn-group" class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-info active"><input name="measurement" checked="checked" type="radio" value="0.004329">Inches</label>
+                        <label class="btn btn-info"><input name="measurement" type="radio" value="0.000264172">Centimeters</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Length -->
+            <div class="form-group">
+                <label for="length" class="control-label col-md-2">Length</label>
+                <div class="col-md-4">
+                    <input id="length" type="number" class="form-control" name="length" placeholder="Enter amount">
+                </div>
+            </div>
+            <!-- Width -->
+            <div class="form-group">
+                <label for="width" class="control-label col-md-2">Width</label>
+                <div class="col-md-4">
+                    <input id="width" type="number" class="form-control" name="width" placeholder="Enter amount">
+                </div>
+            </div>
+            <!-- Depth -->
+            <div class="form-group">
+                <label for="depth" class="control-label col-md-2">Depth</label>
+                <div class="col-md-4">
+                    <input id="depth" type="number" class="form-control" name="depth" placeholder="Enter amount">
+                </div>
+            </div>
+            <!-- Water Volume -->
+            <div class="form-group">
+                <label for="water-volume" class="control-label col-md-2">Water Volume</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input id="water-volume" type="text" class="form-control" name="water-volume">
+                        <span class="input-group-addon">Gallons</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Fertilizer Form -->
+    <div class="row">
+        <h2>Calculate Fertilizer</h2>
+        <form id="fertilizer-form" class="form-horizontal">
+            <!-- water volume -->
+            <div class="form-group">
+                <label for="water-volume" class="control-label col-md-2">Water Volume</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input id="fertilizer-water-volume" type="number" class="form-control" name="water-volume" placeholder="Enter amount">
+                        <span class="input-group-addon">Gallons</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Fertilizer -->
+            <div class="form-group">
+                <label for="fertilizer" class="control-label col-md-2">Fertilizer</label>
+                <div class="col-md-4">
+                    <div id="fertilizer-btn-group" class="btn-group" data-toggle="buttons">
+                        <label for="lettuce" class="btn btn-success"><input name="fertilizer" type="radio" value="1">Lettuce</label>
+                        <label for="tomatoes" class="btn btn-danger"><input name="fertilizer" type="radio" value="1.2">Tomatoes</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Master Blend -->
+            <div class="form-group">
+                <label for="master-blend" class="control-label col-md-2">Master Blend</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input id="master-blend" type="number" class="form-control" name="master-blend">
+                        <span class="input-group-addon">Grams</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Calcium Nitrate -->
+            <div class="form-group">
+                <label for="calcium-nitrate" class="control-label col-md-2">Calcium Nitrate</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input id="calcium-nitrate" type="number" class="form-control" name="calcium-nitrate">
+                        <span class="input-group-addon">Grams</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Epsom Salt -->
+            <div class="form-group">
+                <label for="epsom-salt" class="control-label col-md-2">Epsom Salt</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input id="epsom-salt" type="number" class="form-control" name="epsom-salt">
+                        <span class="input-group-addon">Grams</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    (function(){
+
+        $('#measurement-btn-group label').on('click', function () {
+            $('#measurement-btn-group label').removeClass().addClass('btn btn-default');
+            $(this).addClass('btn btn-info');
+        });
+
+        $('#fertilizer-btn-group label').on('click', function() {
+            $('#fertilizer-btn-group label').removeClass().addClass('btn btn-default');
+            if ($(this).attr('for') === 'lettuce') {
+                $(this).addClass('btn btn-success');
+            } else {
+                $(this).addClass('btn btn-danger');
+            }
+            
+        });
+
+        /*
+        @param // measurement: value in inches or cm (0.004329 or 0.000264172)
+        @param // length: value of length in the equation
+        @param // width: value of width in the equation
+        @param // depth: value of depth in the equation
+        @param // waterVolume: DOM element which will contain the ouput
+         */
+        function waterVolume(measurement, length, width, depth, waterVolume){
+            var volume = measurement * length * width * depth;
+            volume = volume.toFixed(4);
+            waterVolume.val(volume);
+            $('#fertilizer-water-volume').val(volume); 
+        }
+        // Add event handler to the form to listen for any changes
+        $('#water-volume-form').on('change', function() {
+            waterVolume($('input[name="measurement"]:checked').val(),
+                        $('#length').val(),
+                        $('#width').val(),
+                        $('#depth').val(),
+                        $('#water-volume'));
+        });
+
+        /*
+        @param // waterVolume: value of fertilizer water volume
+        @param // fertilizer: type of fertilizer (lettuce:1 or tomato:1.2)
+        @param // masterBlend: DOM element with master blend output
+        @param // calciumNitrate: DOM element with calcium nitrate output
+        @param // epsomSalt: DOM element with epsom salt output
+         */
+        function fertilizer(waterVolume, fertilizer, masterBlend, calciumNitrate, epsomSalt) {
+            var volume1 = fertilizer * waterVolume * 2;
+            volume1 = volume1.toFixed(4);
+            var volume2 = fertilizer * waterVolume * 1;
+            volume2 = volume2.toFixed(4);            
+            masterBlend.val(volume1);
+            calciumNitrate.val(volume1);
+            epsomSalt.val(volume2);
+        }
+
+        $('#fertilizer-form').on('change', function() {
+            fertilizer($('#fertilizer-water-volume').val(),
+                       $('input[name="fertilizer"]:checked').val(),
+                       $('#master-blend'),
+                       $('#calcium-nitrate'),
+                       $('#epsom-salt'));
+        });
+
+    }());
+</script>

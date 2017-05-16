@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/globalize/1.1.1/globalize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="estimator.js"></script>
+    
+    <style>
+        .dollar-slider input[type=number] {
+            display: none;
+        }
+        
+        .dollar-slider .dollarLabel {
+            position: relative;
+            top: -38px;
+            width: 50px;
+        }
+        
+        .ui-slider div.ui-slider-popup {
+            width: 100px;
+        }
+        
+        .ui-slider-track .ui-btn.ui-slider-handle {
+            width: 65px;
+            height: 40px;
+            top: 15%;
+        }
+        
+        label.calcValue {
+            font-weight: bold;
+            font-size: large;
+            color: #38C;
+        }
+        /*Hide the text box next to the slider.*/
+        
+        input.ui-slider-input {
+            display: none !important;
+        }
+        /* Hiding the input box reserves space still, so pad the right to make it centered.*/
+        
+        div.ui-slider {
+            padding-right: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div data-role="page" id="pageone">
+        <div data-role="header">
+            <a href="#myPanel" data-icon="gear" class="ui-btn-right">Options</a>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div style="padding-left:10px;padding-right:50px;text-align:center; margin-left: auto; margin-right: auto; ">
+                <!-- Sliders -->
+                <label for="slider-3">Contract Term (months)</label>
+                <input type="range" name="s-dp" id="sTerm" min="6" max="60" value="36" step="1" data-highlight="true" data-show-value="true"
+                    data-popup-enabled="true">
+                <div id="divDownPayment">
+                    <label for="slider-3">Down Payment</label>
+                    <input type="range" name="s-dp" id="sDp" min="0" max="4268" value="750" data-highlight="true" data-show-value="true" data-popup-enabled="true">
+                    <!--<input type="text" data-role="none" class="dollarLabel ui-shadow-inset ui-body-inherit ui-corner-all ui-slider-input" value="$10.00" disabled />-->
+                </div>
+                <label for="slider-3">Monthly Payment</label>
+                <input type="range" name="s-mth" id="sMth" min="0" max="340" value="50" data-highlight="true" data-show-value="true" data-popup-enabled="true">
+                <!-- Show Results-->
+                <div data-role="content" data-theme="a" class="ui-grid-b">
+                    <div class="ui-block-a"><label>Case Fee</label><label id="DisplayCaseFee" class="calcValue">[mth pymt]</label></div>
+                    <div class="ui-block-b"><label>Ins. Discount</label><label id="DisplayInsDiscount" class="calcValue">[mth pymt]</label></div>
+                    <div class="ui-block-c"><label>Balance</label><label id="DisplayPrincipal" class="calcValue">[mth pymt]</label></div>
+                </div>
+                <div data-role="content" data-theme="a" class="ui-grid-c">
+                    <div class="ui-block-a"><label>Contract Term</label><label id="DisplayTerm" class="calcValue">[mth pymt]</label></div>
+                    <div class="ui-block-b"><label>Down Payment</label><label id="DisplayDownPayment" class="calcValue">[mth pymt]</label></div>
+                    <div class="ui-block-c"><label>Monthly Payment</label><label id="DisplayMthlyPymt" class="calcValue">[mth pymt]</label></div>
+                    <div class="ui-block-d"><label>Interest Rate</label><label id="DisplayInterestRate" class="calcValue">[mth pymt]</label></div>
+                </div>
+            </div>
+        </div>
+        <div data-role="panel" id="myPanel">
+            <!-- panel content goes here -->
+            <label for="txtCaseFee">Case Fee</label><input type="text" id="txtCaseFee" value="4500" />
+            <label for="txtDiscount">Discount</label><input type="text" id="txtDiscount" value="100" />
+            <label for="txtApr">APR</label><input type="text" id="txtApr" value="4.99" />
+            <label for="txtAprAfter">Apply APR after (months)</label><input type="text" id="txtAprAfter" value="36" />
+            <label for="txtMinDownPymt">MinDownPymt</label><input type="text" id="txtMinDownPymt" value="500" />
+        </div>
+        <!-- /panel -->
+    </div>
+    <script type="text/javascript">
+        var osiFee
+        $(document).ready(function () {
+            osiFee = new osi.FeeEstimator();
+        });
+    </script>
+</body>
+
+</html>

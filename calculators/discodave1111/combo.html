@@ -1,0 +1,138 @@
+<style>
+#calc * {
+    display: block;
+}
+
+#calc {
+    background-color: #F3F6FB;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#calc row {
+    width: 100%;
+    margin: 0;
+}
+
+#calc label-div {
+    padding: 5px 0;
+}
+
+#calc label  {
+    font-size: 15px;    
+}
+
+#calc input {
+    height: 30px;
+    border-radius: 3px;
+    font-size: 17px;
+    padding: 5px;
+}
+
+.center {
+    text-align: center;
+}
+</style>
+<div id="calc">
+    <h3 class="center">Mortgage Calculator</h1>
+        <div class="row">
+            <div class="label-div col-lg-5">
+                <label for="mortgage">Mortgage Value (£)</label>
+            </div>
+            <input class="col-lg-6" type="number" name="mortgage" id="mortgage" value="100000">
+        </div>
+        <br>
+        <div class="row">
+            <div class="label-div col-lg-5">
+                <label for="term">Loan Term (Years)</label>
+            </div>
+            <input class="col-lg-6" type="number" name="term" id="term" value="25">
+        </div>
+        <br>
+        <div class="row">
+            <div class="label-div col-lg-5">
+                <label for="rate">Interest Rate (%)</label>
+            </div>
+            <input class="col-lg-6" type="number" name="rate" id="rate" value="3">
+        </div>
+        <br>
+        <div>
+            <select id="calculationType">
+                <option value="1">Capital &amp; Interest</option>
+                <option value="2">Interest Only</option>
+            </select>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="row">
+            <div class="label-div col-lg-5">
+                <label for="monthly">Monthly Payment</label>
+            </div>
+            <input class="col-lg-6" type="number" name="monthly" id="monthly" value="0">
+        </div>
+        <br>
+        <div class="row">
+            <div class="label-div col-lg-5">
+                <label for="total">Total Repayment</label>
+            </div>
+            <input class="col-lg-6" type="number" name="total" id="total" value="0">
+        </div>
+        <br>
+        <div class="row">
+            <div class="label-div col-lg-5">
+                <label for="interest">Total Interest Paid</label>
+            </div>
+            <input class="col-lg-6" type="number" name="interest" id="interest" value="0">
+        </div>
+</div>
+<script>
+(function($) {
+    
+function repaymentCalc() {
+    var mortgageValue = parseFloat($('#mortgage').val(), 10); //principle / initial amount borrowed
+    var term = parseFloat($('#term').val(), 10) * 12; //number of payments months
+    var interestRate = parseFloat($('#rate').val(), 10) / 100 / 12; //monthly interest rate
+
+    //monthly mortgage payment
+    monthlyPayment = (repayment(mortgageValue, term, interestRate)).toFixed(2);
+    totalPayment = (monthlyPayment * term).toFixed(2);
+    totalInterest = (totalPayment - mortgageValue).toFixed(2);
+
+    $('#monthly').val(monthlyPayment);
+    $('#total').val(totalPayment);
+    $('#interest').val(totalInterest);
+}
+
+function interestOnlyCalc() {
+    var mortgageValue = parseFloat($('#mortgage').val(), 10); //principle / initial amount borrowed
+    var term = parseFloat($('#term').val(), 10) * 12; //number of payments months
+    var interestRate = parseFloat($('#rate').val(), 10) / 100 / 12; //monthly interest rate
+
+    monthlyPayment = (interestOnly(mortgageValue, term, interestRate)).toFixed(2);
+    totalPayment = (monthlyPayment * term + mortgageValue).toFixed(2);
+    totalInterest = (totalPayment - mortgageValue).toFixed(2);
+
+    $('#monthly').val(monthlyPayment);
+    $('#total').val(totalPayment);
+    $('#interest').val(totalInterest);
+}
+
+function repayment(p, n, i) {
+    return p * i * (Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
+}
+
+function interestOnly(p, n, i) {
+    return p * i;
+}
+
+$('#calc').change(function() {
+    if ($('#calculationType').val() == 1) {
+        repaymentCalc();
+    } else {
+        interestOnlyCalc();
+    }
+});
+
+}(jQuery));
+</script>

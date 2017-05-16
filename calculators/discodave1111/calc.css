@@ -1,0 +1,37 @@
+#calc * {
+    display: block;
+}
+
+#calc {
+    background-color: #F3F6FB;
+    border: 1px solid black;
+    width: 260px;
+    height: 470px;
+    padding: 10px;
+}
+
+#calc row {
+    width: 100%;
+    margin: 0;
+}
+
+#calc label-div {
+    padding: 5px 0;
+}
+
+#calc label  {
+    font-size: 15px;    
+}
+
+#calc input {
+    height: 30px;
+    border-radius: 3px;
+    font-size: 17px;
+    padding: 5px;
+}
+
+.center {
+    text-align: center;
+}
+
+

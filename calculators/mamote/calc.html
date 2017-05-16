@@ -1,0 +1,94 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/globalize/1.1.1/globalize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+    .ui-panel-inner {
+        position: fixed;
+        margin-top: 5%;
+    }
+    .dollar-slider input[type=number] {
+        display: none;
+    }
+    
+    .dollar-slider .dollarLabel {
+        position: relative;
+        top: -38px;
+        width: 50px;
+    }
+    
+    .ui-slider div.ui-slider-popup {
+        width: 100px;
+    }
+    
+    .ui-slider-track .ui-btn.ui-slider-handle {
+        width: 65px;
+        height: 40px;
+        top: 15%;
+    }
+    
+    label.calcValue {
+        font-weight: bold;
+        font-size: large;
+        color: #38C;
+    }
+    /*Hide the text box next to the slider.*/
+    
+    input.ui-slider-input {
+        display: none !important;
+    }
+    /* Hiding the input box reserves space still, so pad the right to make it centered.*/
+    
+    div.ui-slider {
+        padding-right: 40px;
+    }
+</style>
+<div id="pageone">
+    <div data-role="main" class="ui-content">
+        <div data-role="header">
+            <a href="#myPanel" data-icon="gear" class="ui-btn-right">Options</a>
+        </div>
+        <div style="padding-left:10px;padding-right:50px;text-align:center; margin-left: auto; margin-right: auto; ">
+            <!-- Sliders -->
+            <label for="slider-3">Contract Term (months)</label>
+            <input type="range" name="s-dp" id="sTerm" min="6" max="60" value="36" step="1" data-highlight="true" data-show-value="true"
+                data-popup-enabled="true">
+            <div id="divDownPayment">
+                <label for="slider-3">Down Payment</label>
+                <input type="range" name="s-dp" id="sDp" min="0" max="4268" value="750" data-highlight="true" data-show-value="true" data-popup-enabled="true">
+                <!--<input type="text" data-role="none" class="dollarLabel ui-shadow-inset ui-body-inherit ui-corner-all ui-slider-input" value="$10.00" disabled />-->
+            </div>
+            <label for="slider-3">Monthly Payment</label>
+            <input type="range" name="s-mth" id="sMth" min="0" max="340" value="50" data-highlight="true" data-show-value="true" data-popup-enabled="true">
+            <!-- Show Results-->
+            <div data-role="content" data-theme="a" class="ui-grid-b">
+                <div class="ui-block-a"><label>Case Fee</label><label id="DisplayCaseFee" class="calcValue">[mth pymt]</label></div>
+                <div class="ui-block-b"><label>Ins. Discount</label><label id="DisplayInsDiscount" class="calcValue">[mth pymt]</label></div>
+                <div class="ui-block-c"><label>Balance</label><label id="DisplayPrincipal" class="calcValue">[mth pymt]</label></div>
+            </div>
+            <div data-role="content" data-theme="a" class="ui-grid-c">
+                <div class="ui-block-a"><label>Contract Term</label><label id="DisplayTerm" class="calcValue">[mth pymt]</label></div>
+                <div class="ui-block-b"><label>Down Payment</label><label id="DisplayDownPayment" class="calcValue">[mth pymt]</label></div>
+                <div class="ui-block-c"><label>Monthly Payment</label><label id="DisplayMthlyPymt" class="calcValue">[mth pymt]</label></div>
+                <div class="ui-block-d"><label>Interest Rate</label><label id="DisplayInterestRate" class="calcValue">[mth pymt]</label></div>
+            </div>
+        </div>
+    </div>
+    <div data-role="panel" id="myPanel">
+        <!-- panel content goes here -->
+        <label for="txtCaseFee">Case Fee</label><input type="text" id="txtCaseFee" value="4500" />
+        <label for="txtDiscount">Discount</label><input type="text" id="txtDiscount" value="100" />
+        <label for="txtApr">APR</label><input type="text" id="txtApr" value="4.99" />
+        <label for="txtAprAfter">Apply APR after (months)</label><input type="text" id="txtAprAfter" value="36" />
+        <label for="txtMinDownPymt">MinDownPymt</label><input type="text" id="txtMinDownPymt" value="500" />
+    </div>
+    <!-- /panel -->
+</div>
+<script type="text/javascript">
+var osi;!function(t){function s(t){var s=t.toString().replace("$",""),i=!1,n=[],e=1,l=null;s.indexOf(".")>0&&(i=s.split("."),s=i[0]),s=s.split("").reverse();for(var a=0,h=s.length;h>a;a++)","!=s[a]&&(n.push(s[a]),e%3==0&&h-1>a&&n.push(","),e++);return l=n.reverse().join(""),"$"+l+(i?"."+i[1].substr(0,2):"")}var i=function(){function s(){var t=this;this.CaseFee=$("#txtCaseFee"),this.CaseFee.on("change",function(){t.CalculatePrincipal(),t.SetValues()}),this.Discount=$("#txtDiscount"),this.Discount.on("change",function(){t.OnDiscount_Changed()}),this.MinDownPayment=$("#txtMinDownPymt"),this.MinDownPayment.on("change",function(){t.OnMinDownPayment_Changed()}),this.Apr=$("#txtApr"),this.Apr.on("change",function(){t.OnApr_Changed()}),this.AprAfter=$("#txtAprAfter"),this.AprAfter.on("change",function(){t.OnApr_Changed()}),console.log(this.Principal),this.DisplayCaseFee=$("#DisplayCaseFee"),this.DisplayInsDiscount=$("#DisplayInsDiscount"),this.DisplayPrincipal=$("#DisplayPrincipal"),this.DisplayTerm=$("#DisplayTerm"),this.DisplayMthlyPymt=$("#DisplayMthlyPymt"),this.DisplayDownPymt=$("#DisplayDownPayment"),this.DisplayApr=$("#DisplayInterestRate"),this.tooltip=$('<div id="tooltip" />').css({position:"absolute",top:0,left:20}),this.slDownPymt=$("#sDp"),this.slDownPymt.on("change",function(){t.OnDownPayment_Changed()}),this.slMthlyPymt=$("#sMth"),this.slMthlyPymt.on("change",function(){t.OnMonthlyPayment_Changed()}),this.slTerm=$("#sTerm"),this.slTerm.on("change",function(){t.OnTerm_Changed()}),this.CaseFee.val(4500),this.Discount.val(100),this.CalculatePrincipal(),this.slDownPymt.val(1400),this.slTerm.val(24),this.SetMaxMonthlyPaymentAmount(),this.CalculateMontlyPayment(),this.Refresh(this.slTerm),this.SetValues()}return s.prototype.SetMaxMonthlyPaymentAmount=function(){var t=0;if(this.slTerm.val()>this.AprAfter.val()){var s=this.Principal,i=this.Apr.val()/1200,n=this.slTerm.val();t=s*i/(1-Math.pow(1/(1+i),n)),console.log(t)}else t=this.Principal/this.slTerm.val();this.slMthlyPymt.prop("max",t),this.Refresh(this.slMthlyPymt)},s.prototype.SetValues=function(){this.DisplayCaseFee.html(t.toCurrencyString(this.CaseFee.val())),this.DisplayInsDiscount.html(t.toCurrencyString(this.Discount.val())),this.DisplayPrincipal.html(t.toCurrencyString(this.Principal)),this.DisplayTerm.html(this.slTerm.val()+" mths"),this.DisplayMthlyPymt.html(t.toCurrencyString(this.slMthlyPymt.val())),this.DisplayDownPymt.html(t.toCurrencyString(this.slDownPymt.val())),this.slTerm.val()>this.AprAfter.val()?this.DisplayApr.html(this.Apr.val()+" %"):this.DisplayApr.html("0 %")},s.prototype.OnMinDownPayment_Changed=function(){this.slDownPymt.prop("min",this.MinDownPayment.val()),this.Refresh(this.slDownPymt)},s.prototype.OnApr_Changed=function(){this.SetMaxMonthlyPaymentAmount(),this.CalculateMontlyPayment(),this.SetValues()},s.prototype.OnDiscount_Changed=function(){this.CalculatePrincipal(),this.SetValues()},s.prototype.OnTerm_Changed=function(){this.SetMaxMonthlyPaymentAmount(),this.CalculateMontlyPayment(),this.SetValues()},s.prototype.OnDownPayment_Changed=function(){var s=t.toCurrencyString(this.slDownPymt.val());$("#divDownPayment .dollarLabel").val(s),$("#divDownPayment .ui-slider-popup").html(s),$("#divDownPayment .ui-slider-handle").prop("title",s),this.slDownPymt.prop("step",50),this.CalculateMontlyPayment(),this.SetValues()},s.prototype.OnMonthlyPayment_Changed=function(){this.DisplayMthlyPymt.html(t.toCurrencyString(this.slMthlyPymt.val())),this.slMthlyPymt.prop("step",5),this.CalculateDownPayment(),this.SetValues()},s.prototype.CalculatePrincipal=function(){console.log(this.CaseFee.val());var t=this.CaseFee.val()-this.Discount.val();this.Principal=t,this.slDownPymt.prop("max",t),this.slDownPymt.slider("refresh")},s.prototype.CalculateDownPayment=function(){var t=this,s=this.Principal-this.slMthlyPymt.val()*this.slTerm.val();this.slDownPymt.prop("step",.01),this.UpdateSlider(this.slDownPymt,s),this.slDownPymt.on("change",function(){t.OnDownPayment_Changed()}),this.SetValues()},s.prototype.CalculateMontlyPayment=function(){var s=this,i=0;if(console.log(this.slTerm.val()),this.slTerm.val()>this.AprAfter.val()){var n=this.Principal-this.slDownPymt.val(),e=this.Apr.val()/1200,l=this.slTerm.val();console.log(n+" - "+e+" - "+l+" - "),i=n*e/(1-Math.pow(1/(1+e),l)),console.log(i)}else i=(this.Principal-this.slDownPymt.val())/this.slTerm.val();this.DisplayMthlyPymt.html(t.toCurrencyString(i)),this.slMthlyPymt.prop("step",.01),this.UpdateSlider(this.slMthlyPymt,i),this.slMthlyPymt.on("change",function(){s.OnMonthlyPayment_Changed()})},s.prototype.Refresh=function(t){t.slider("refresh")},s.prototype.UpdateSlider=function(t,s){t.off("change"),t.val(s),this.Refresh(t)},s}();t.FeeEstimator=i,t.toCurrencyString=s}(osi||(osi={}));
+    var osiFee
+    $(document).ready(function () {
+        osiFee = new osi.FeeEstimator();
+    });
+</script>
