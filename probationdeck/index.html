@@ -40,7 +40,7 @@
     <!-- Begin slides. Just make elements with a class of slide. -->
 
     <section class="slide">
-      <h2>Presented by: Muhammad Osama Arshad</h2>
+      <h2>Muhammad Osama Arshad Presents</h2>
 
       <h1>How to Think in React</h1>
     </section>
@@ -52,7 +52,7 @@
           <h3>A library for building user interfaces</h3>
         </li>
         <li>
-          <h3>Uses components to enforce separation of concerns</h3>
+          <h3>Uses a component based architecture to enforce separation of concerns</h3>
         </li>
         <li>
           <h3>Makes you think in terms of components, state and props</h3>
@@ -99,60 +99,15 @@
     </section>
 
     <section class="slide">
-      <h2>Example App: Youtube Search App</h2>
+      <h2>Example: </h2>
+      <h1>Youtube Search App</h1>
+    </section>
+
+    <section class="slide">
+      <h2>Youtube Search App</h2>
       <div class="row">
         <div class="col-lg-4">
           <h2>Search Form</h2>
-          <code>
-            class SearchForm extends Component {
-  constructor() {
-    super();
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {
-      query: ""
-    };
-  }
-
-  static propTypes = {
-    searchHandler: PropTypes.func
-  };
-
-  handleChange(query) {
-    this.setState({
-      query
-    });
-  }
-
-  handleSubmit(evt) {
-    evt.preventDefault();
-    this.props.searchHandler(this.state.query);
-  }
-
-  render() {
-    return (
-      <div className="search-container">
-        <form action="" className="search-form">
-          <input
-            onChange={evt => this.handleChange(evt.target.value)}
-            className="search-input"
-            type="text"
-            placeholder="Search"
-          />
-          <button
-            onClick={this.handleSubmit}
-            className="search-button"
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
-      </div>
-    );
-  }
-}
-
-          </code>
         </div>
         <div class="col-lg-4">
           <h2>Result List</h2>
@@ -162,9 +117,28 @@
         </div>
       </div>
     </section>
+
     <section class="slide">
-      <h1>Here</h1>
+      <h2>Example App: Youtube Search App</h2>
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+          <h2>Root Component (App)</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <h2>Search Form</h2>
+        </div>
+        <div class="col-lg-4">
+          <h2>Result List</h2>
+        </div>
+        <div class="col-lg-4">
+          <h2>Video Player</h2>
+        </div>
+      </div>
     </section>
+
+    
     <section class="slide">
       <h1>Here</h1>
     </section>
