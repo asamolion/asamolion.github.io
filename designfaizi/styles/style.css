@@ -1,0 +1,222 @@
+@font-face {
+  font-family: "OratorStd";
+  src: url("/fonts/OratorStd.otf") format("opentype"); }
+
+@font-face {
+  font-family: "OratorStd-Slanted";
+  src: url("/fonts/OratorStd-Slanted.otf") format("opentype"); }
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("/fonts/Avenir_Next.ttc") format("truetype"); }
+
+#main-carousel {
+  height: 250px;
+  overflow: hidden; }
+  #main-carousel .carousel-item .img-responsive {
+    width: 100%; }
+  #main-carousel .carousel-caption {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    transform: translateY(-50%); }
+    #main-carousel .carousel-caption .caption-heading {
+      display: block;
+      font-size: 3em;
+      font-family: "Avenir Next", Arial, Helvetica, sans-serif;
+      color: #ff0d3c;
+      position: absolute;
+      left: 5%; }
+    #main-carousel .carousel-caption .caption-text {
+      display: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: lighter;
+      color: lightgrey; }
+  #main-carousel .hello {
+    background: #ff0d3c;
+    color: white;
+    font-family: OratorStd, Arial, Helvetica, sans-serif;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    #main-carousel .hello p {
+      margin: 0; }
+
+#main-nav {
+  background: transparent;
+  border: none; }
+  #main-nav .navbar-brand img {
+    height: 30px; }
+  #main-nav .nav .nav-link {
+    color: grey;
+    font-family: OratorStd, Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    padding: 20px; }
+  #main-nav .nav .nav-link.active {
+    color: #ff0d3c; }
+  #main-nav .navbar-collapse.collapse.in ul,
+  #main-nav .navbar-collapse.collapsing ul {
+    background: black; }
+
+#about-content {
+  margin: 50px; }
+  #about-content .img-container .img-responsive {
+    margin: 10px; }
+  #about-content .about-heading {
+    font-family: OratorStd, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ff0d3c;
+    display: inline-block;
+    border-bottom: 1px solid #ff0d3c; }
+  #about-content .about-text {
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em; }
+  #about-content .principle-heading {
+    position: relative;
+    left: -40px;
+    font-family: OratorStd, Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    width: 100%;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0; }
+  #about-content .principle-number {
+    color: #ff0d3c;
+    display: inline-block;
+    margin: 10px; }
+  #about-content .principle-text {
+    text-align: justify;
+    display: block;
+    font-size: 1.2em;
+    color: grey; }
+
+#portfolio-content .portfolio-heading {
+  color: #ff0d3c;
+  display: block;
+  font-family: OratorStd, Arial, Helvetica, sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 30px 0 30px 15px; }
+
+#portfolio-content .thumbnail {
+  padding: 0; }
+  #portfolio-content .thumbnail .caption {
+    background: #eeeeee; }
+    #portfolio-content .thumbnail .caption .heading {
+      color: #ff0d3c;
+      font-family: OratorStd, Arial, Helvetica, sans-serif; }
+    #portfolio-content .thumbnail .caption .text {
+      color: grey; }
+    #portfolio-content .thumbnail .caption .view-button {
+      background: #ff0d3c;
+      color: white;
+      font-family: OratorStd, Arial, Helvetica, sans-serif;
+      padding: 10px 0 5px 0;
+      width: 100%;
+      border: none;
+      box-shadow: none; }
+
+#portfolio-content a.thumbnail:hover {
+  text-decoration: none; }
+
+#contact-data .contact-card {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  #contact-data .contact-card .contact-heading {
+    font-family: OratorStd, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ff0d3c;
+    display: block;
+    border-bottom: 1px solid #ff0d3c; }
+  #contact-data .contact-card .contact-text {
+    color: gray; }
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: #1a1a1a;
+  height: 200px; }
+  #footer .footer-nav .nav-pill {
+    color: white;
+    font-family: OratorStd, Arial, Helvetica, sans-serif; }
+  #footer .footer-nav .nav-pill:hover {
+    color: #ff0d3c;
+    background: #1a1a1a; }
+  #footer .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; }
+    #footer .social-icons .icon {
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      width: 30px;
+      margin: 10px;
+      background: #d8d9d8;
+      color: #1a1a1a; }
+  #footer .copy-text {
+    color: white; }
+
+@media (min-width: 576px) {
+  #main-nav .navbar-brand {
+    margin-right: 0; }
+    #main-nav .navbar-brand img {
+      height: 50px; } }
+
+@media (min-width: 768px) {
+  #main-carousel {
+    height: 600px; } }
+
+@media (min-width: 992px) {
+  #main-carousel {
+    height: 600px; }
+    #main-carousel .carousel-caption {
+      top: 45%; }
+      #main-carousel .carousel-caption .caption-heading {
+        display: block;
+        font-size: 3em;
+        font-family: "Avenir Next", Arial, Helvetica, sans-serif;
+        color: #ff0d3c;
+        position: absolute;
+        left: 5%; }
+      #main-carousel .carousel-caption .caption-text {
+        position: absolute;
+        top: 100px;
+        left: 5%;
+        display: block;
+        font-size: 1.3em;
+        font-weight: lighter;
+        text-shadow: 0px 0px 2px white;
+        width: 60%;
+        color: #ff0d3c;
+        width: 70%;
+        text-align: left; }
+  #contact-data {
+    margin: 50px 0 150px 0; }
+    #contact-data .contact-card .contact-heading {
+      font-size: 1.6em;
+      margin-bottom: 20px; }
+    #contact-data .contact-card .contact-text {
+      font-size: 1.4em; }
+  #about-content .principle-container {
+    padding-left: 3%; }
+  #about-content .principle-heading {
+    font-size: 1.5em; }
+  #about-content .principle-number {
+    margin: 10px; }
+  #about-content .principle-text {
+    font-size: 1.3em;
+    width: 90%;
+    position: relative;
+    left: 1%; } }
