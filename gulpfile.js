@@ -1,7 +1,7 @@
 var gulp = require("gulp");
 var sass = require("gulp-sass");
 var pug = require("gulp-pug");
-var htmlmin = require('gulp-htmlmin');
+var htmlmin = require("gulp-htmlmin");
 var browserSync = require("browser-sync").create();
 var babel = require("gulp-babel");
 var plumber = require("gulp-plumber");
@@ -12,16 +12,16 @@ gulp.task("html", function() {
         .src("src/**/*.pug")
         .pipe(plumber())
         .pipe(pug({ pretty: true }))
-        .pipe(gulp.dest("build"))
+        .pipe(inlinesource({ compress: false, pretty: true }))
+        .pipe(gulp.dest("build"));
 });
-
 
 gulp.task("css", function() {
     return gulp
         .src("src/**/*.scss") // Gets all files ending with .scss in app/scss and children dirs
         .pipe(plumber())
         .pipe(sass())
-        .pipe(gulp.dest("build"))
+        .pipe(gulp.dest("build"));
 });
 
 gulp.task("js", function() {
@@ -48,13 +48,13 @@ gulp.task("minify", function() {
     return gulp
         .src("./build/*.html")
         .pipe(inlinesource({ compress: false, pretty: true }))
-        .pipe(gulp.dest("./"))
+        .pipe(gulp.dest("./"));
 });
 
-gulp.task("watch", ["browserSync", "html", "css", "js"], function() {
+gulp.task("watch", ["html", "css", "js", "browserSync"], function() {
     gulp.watch("src/**/*.pug", ["html", browserSync.reload]);
     gulp.watch("src/**/*.scss", ["css", browserSync.reload]);
     gulp.watch("src/**/*.js", ["js", browserSync.reload]);
 });
 
-gulp.task("default", ["html", "css", "js", "minify"]);
+gulp.task("default", ["minify"]);
