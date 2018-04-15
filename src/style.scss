@@ -1,0 +1,48 @@
+$material-grey: #e2e1e0;
+$grey: #777;
+
+
+$material-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+body {
+    background-color: $material-grey;
+    font-family: Lato;
+}
+
+.sidebar {
+    background-color: #fff;
+    box-shadow: $material-shadow;
+    .profile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .picture {
+            border-radius: 50%;
+            width: 70%;
+            margin: 10% 0 0;
+        }
+        .name {
+            font-size: 1.8em;
+            text-align: center;
+            margin: 20px 15px;
+        }
+        .title {
+            margin: 0;
+            color: $grey;
+            font-size: 1.3em;
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+
+    .details {
+        padding: 10px 20px;
+        font-size: 1em;
+        .particular {
+            .text {
+                padding: 10px;
+            }
+        }
+    }
+}

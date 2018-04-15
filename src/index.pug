@@ -3,15 +3,34 @@ html(lang="en")
     head
         meta(charset="utf-8")
         meta(http-equiv="x-ua-compatible" content="ie=edge")
-        title Muhammad Osama Arshad - Programmer
+        title Muhammad Osama Arshad - Likes JavaScript
         meta(name="description" content="")
-        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
 
         link(rel="apple-touch-icon" href="apple-touch-icon.png")
-
+        link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.0.10/css/all.css", integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg", crossorigin="anonymous")
+        link(rel="styleshee", href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,700")
         link(rel="stylesheet", href="./style.css" inline)
     body
-        h1 Finally, Gulp is configured properly
+        aside.sidebar
+            section.profile
+                img.picture(src="https://avatars3.githubusercontent.com/u/14261053?s=460&v=4")
+                h1.name Muhammad Osama Arshad
+                h3.title JavaScript and a little bit of Python
+            hr
+            section.details
+                p.particular
+                    i.fas.fa-map-marker
+                    span.text Lahore, Pakistan
+                p.particular
+                    i.far.fa-envelope
+                    span.text muhammadosamaarshad@gmail.com
+                p.particular
+                    i.fas.fa-link
+                    a.text(href="https://alazierplace.com") alazierplace.com
+            section.social-media
+                
+        section.main
 
         script(src="./app.js" inline)
 

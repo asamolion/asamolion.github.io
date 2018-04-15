@@ -3,18 +3,62 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Muhammad Osama Arshad - Programmer</title>
+    <title>Muhammad Osama Arshad - Likes JavaScript</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="styleshee" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,700">
     <style>
     body {
-      color: red; }
+      background-color: #e2e1e0;
+      font-family: Lato; }
+
+    .sidebar {
+      background-color: #fff;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+      .sidebar .profile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        .sidebar .profile .picture {
+          border-radius: 50%;
+          width: 70%;
+          margin: 10% 0 0; }
+        .sidebar .profile .name {
+          font-size: 1.8em;
+          text-align: center;
+          margin: 20px 15px; }
+        .sidebar .profile .title {
+          margin: 0;
+          color: #777;
+          font-size: 1.3em;
+          font-weight: 400;
+          text-align: center; }
+      .sidebar .details {
+        padding: 10px 20px;
+        font-size: 1em; }
+        .sidebar .details .particular .text {
+          padding: 10px; }
 
     </style>
   </head>
   <body>
-    <h1>Finally, Gulp is configured properly</h1>
+    <aside class="sidebar">
+      <section class="profile"><img class="picture" src="https://avatars3.githubusercontent.com/u/14261053?s=460&amp;v=4">
+        <h1 class="name">Muhammad Osama Arshad</h1>
+        <h3 class="title">JavaScript and a little bit of Python</h3>
+      </section>
+      <hr>
+      <section class="details">
+        <p class="particular"><i class="fas fa-map-marker"></i><span class="text">Lahore, Pakistan</span></p>
+        <p class="particular"><i class="far fa-envelope"></i><span class="text">muhammadosamaarshad@gmail.com</span></p>
+        <p class="particular"><i class="fas fa-link"></i><a class="text" href="https://alazierplace.com">alazierplace.com</a></p>
+      </section>
+      <section class="social-media"></section>
+    </aside>
+    <section class="main"></section>
     <script>
     "use strict";
 

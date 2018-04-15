@@ -12,7 +12,6 @@ gulp.task("html", function() {
         .src("src/**/*.pug")
         .pipe(plumber())
         .pipe(pug({ pretty: true }))
-        .pipe(inlinesource({ compress: false, pretty: true }))
         .pipe(gulp.dest("build"));
 });
 
