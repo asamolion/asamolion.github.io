@@ -1,6 +1,7 @@
 $material-grey: #e2e1e0;
+$google-blue: #1a0dab;
 $grey: #777;
-
+$dark-grey: #555;
 
 $material-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 body {
@@ -8,9 +9,34 @@ body {
     font-family: Lato;
 }
 
+a {
+    text-decoration: none;
+    color: $google-blue;
+    padding: 0 5px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.underlined {
+    border-bottom: 1px solid $grey;
+}
+
+.no-top {
+    margin-top: 0;
+    padding-top: 0;
+}
+
 .sidebar {
     background-color: #fff;
     box-shadow: $material-shadow;
+    border-radius: 5px;
+
     .profile {
         display: flex;
         flex-direction: column;
@@ -19,7 +45,7 @@ body {
 
         .picture {
             border-radius: 50%;
-            width: 70%;
+            width: 65%;
             margin: 10% 0 0;
         }
         .name {
@@ -44,5 +70,31 @@ body {
                 padding: 10px;
             }
         }
+    }
+}
+
+.main {
+    background-color: #fff;
+    box-shadow: $material-shadow;
+    border-radius: 5px;
+    padding-bottom: 20px;
+
+    section {
+        padding: 10px 20px 0;
+
+        .far,
+        .fas {
+            padding-right: 10px;
+        }
+    }
+
+    .designation {
+        font-size: 1.1em;
+    }
+
+    .duration {
+        margin: 0;
+        font-size: 0.9em;
+        color: $dark-grey;
     }
 }
