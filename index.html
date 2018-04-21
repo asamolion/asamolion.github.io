@@ -14,9 +14,27 @@
       background-color: #e2e1e0;
       font-family: Lato; }
 
+    a {
+      text-decoration: none;
+      color: #1a0dab;
+      padding: 0 5px; }
+      a:hover {
+        text-decoration: underline; }
+
+    .bold {
+      font-weight: bold; }
+
+    .underlined {
+      border-bottom: 1px solid #777; }
+
+    .no-top {
+      margin-top: 0;
+      padding-top: 0; }
+
     .sidebar {
       background-color: #fff;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      border-radius: 5px; }
       .sidebar .profile {
         display: flex;
         flex-direction: column;
@@ -24,7 +42,7 @@
         align-items: center; }
         .sidebar .profile .picture {
           border-radius: 50%;
-          width: 70%;
+          width: 65%;
           margin: 10% 0 0; }
         .sidebar .profile .name {
           font-size: 1.8em;
@@ -42,6 +60,23 @@
         .sidebar .details .particular .text {
           padding: 10px; }
 
+    .main {
+      background-color: #fff;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      border-radius: 5px;
+      padding-bottom: 20px; }
+      .main section {
+        padding: 10px 20px 0; }
+        .main section .far,
+        .main section .fas {
+          padding-right: 10px; }
+      .main .designation {
+        font-size: 1.1em; }
+      .main .duration {
+        margin: 0;
+        font-size: 0.9em;
+        color: #555; }
+
     </style>
   </head>
   <body>
@@ -50,15 +85,35 @@
         <h1 class="name">Muhammad Osama Arshad</h1>
         <h3 class="title">JavaScript and a little bit of Python</h3>
       </section>
-      <hr>
       <section class="details">
-        <p class="particular"><i class="fas fa-map-marker"></i><span class="text">Lahore, Pakistan</span></p>
-        <p class="particular"><i class="far fa-envelope"></i><span class="text">muhammadosamaarshad@gmail.com</span></p>
-        <p class="particular"><i class="fas fa-link"></i><a class="text" href="https://alazierplace.com">alazierplace.com</a></p>
+        <p class="particular"><i class="fas fa-map-marker-alt"></i><span class="text">Lahore, Pakistan</span></p>
+        <p class="particular"><i class="fas fa-envelope"></i><span class="text">muhammadosamaarshad@gmail.com</span></p>
+        <p class="particular"><i class="fas fa-link"></i><a class="text" href="https://alazierplace.com" target="_blank">alazierplace.com</a></p>
       </section>
       <section class="social-media"></section>
     </aside>
-    <section class="main"></section>
+    <div class="main">
+      <section class="about">
+        <h1><i class="fas fa-address-card"></i>About</h1>
+        <p>Married and settled in my hometown of Lahore, I'm a full-stack developer looking for a challenge. I started my career with simple freelance front-end while working as a clerk in my university library and since have made my way to becoming a professional software engineer. I have extensive experience in both front-end and back-end technologies and have familiarity with DevOps tools. On the front-end side my preferred tools are Pug, SCSS and VanillaJS or React.js. On the back-end I'm most comfortable with Express.js, Django, WordPress, PostgreSQL and MongoDB. While at work I take special care in writing robust, clean and efficient code no matter which tech-stack or framework I'm working in and in my free time I enjoy video gaming and reading.</p>
+      </section>
+      <section class="experience">
+        <h1><i class="fas fa-briefcase"></i>Work Experience</h1>
+        <article><span class="designation"><strong>Software Engineer,</strong><a href="https://arbisoft.com" target="_blank">Arbisoft</a></span>
+          <p class="duration">June, 2017 - Present</p>
+          <p class="no-top">Arbisoft is one of the fastest growing software companies of Pakistan. I work here as a full-stack software developer. Here I have had the chance to work on large scale projects involving integration of multiple independent systems. I developed new features for Open edX and Node.js based projects while also developing the UI using jQuery, Backbone.js and React.js. I also assisted the DevOps team in launching our project by helping configure Node.js based delpoyments.</p>
+        </article>
+        <article><span class="designation"><strong>Freelance Web Developer,</strong><a href="https://fiverr.com" targer="_blank">Fiverr.com</a></span>
+          <p class="duration">May, 2016 - May, 2017</p>
+          <p class="no-top">During my final year at UET, Lahore I worked freelance during my free time. I offered services in JavaScript devlopment, PSD to HTML conversions, WordPress customization and development and web form development.</p>
+        </article>
+        <article><span class="designation"><strong>Junior Clerk,</strong><a href="https://" target="_blank">National Library of Engineering Sciences</a></span>
+          <p class="duration">Oct, 2014 - June, 2017</p>
+          <p class="no-top">I started working as a clerk in my university's library during my 3rd semester. I worked in the circulation section of the library and was responsible for issuance and return of books.</p>
+        </article>
+      </section>
+      <section class="projects"></section>
+    </div>
     <script>
     "use strict";
 
