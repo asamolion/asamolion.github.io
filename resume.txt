@@ -1,0 +1,123 @@
+Muhammad Osama Arshad
+Lahore, Pakistan
+muhammadosamaarshad@gmail.com
+
+github.com/asamolion
+linkedin.com/in/muhammadosamaarshad
+stackoverflow.com/users/story/4678750
+
+ABOUT
+============================================================================
+Recently married and settled in my hometown of Lahore. I'm a fullstack
+developer looking for work that will give me a challenge. I started my career
+as a simple clerk in my university library and since have made my way to
+becoming a software engineer. I have extensive experience in both front-end
+and back-end technologies and have also dabbled in some DevOps. Read the rest of
+this resume to find out more about me.
+
+EXPERIENCE
+============================================================================
+Arbisoft (Pvt) Ltd.                                  	Jun 2017 - Current
+Software Engineer
+ - Recieved extensive training on React, Redux, Scrapy and Django
+ - Responsible for integration of a Node.js based discussion forum with Open
+   edX based education platform
+ - Assisted the DevOps team in preparing our product's production environment
+   on AWS
+
+Fiverr.com                                              May 2016 - May 2017
+Freelancer
+ - Worked extensively on front-end development offering services like PSD to
+   HTML conversion, WordPress website customization
+ - Implemented dozens of client-side applications and widgets for multiple clients
+   and integrated them with a multitude of back-end systems such as WordPress,
+   Joomla and even custom back-ends.
+
+National Library of Engineering Sciences, UET Lahore    Oct 2014 - Jun 2017
+Junior Clerk
+ - Responsible for issuance and returning of books
+ - Automated data entry of new students and new books in the library using
+   Selenium
+ - Kept a catalogue of student fines
+ - Extended the library database with 1000+ books and 1000+ students
+
+
+PROJECTS
+============================================================================
+Jobi                                                Jan 2018 - March 2018
+React/Redux application
+https://github.com/asamolion/jobi-frontend
+ - Wrote a custom Webpack build script to integrated React with Django
+ - Implemented the complete front-end using React/Redux
+ - Implemented user authentication with Google firebase and routing using
+   React-Router
+
+NodeBB
+ - Open-source forum software
+ - Integrated NodeBB into an Open edX based education platform
+ - Contributed bug fixes and updates to NodeBB source code on github
+ - Updated a plugin for NodeBB that was out of sync with the latest version
+
+Quality Bridge                                             Nov 2016
+Corporate Website
+http://www.qualitybridge.com
+ - Created a custom website using WordPress
+ - Modified the CSS of current theme using child themes according to required
+   design
+
+
+SIDE PROJECTS
+============================================================================
+YouTube Search App
+https://github.com/asamolion/osama-redux-youtube
+ - React/Redux based pure client-side application
+ - Uses the YouTube search API to fetch a list of videos and play any video
+
+React Todo
+https://github.com/asamolion/react-todo/
+ - Todo app built using ReactJS
+
+Unbeatable Tic Tac Toe
+https://github.com/asamolion/fcc-tictactoe
+ - Implemented a complete tic tac toe game using Pug, SCSS and ES6
+ - Used minimax algorithm for the AI so that the game is unbeatable
+
+
+EDUCATION
+============================================================================
+BS Computer Science (3.030/4.000)                             2013-2017
+University of Engineering and Technology, Lahore
+
+
+CERTIFICATIONS
+============================================================================
+Full Stack Web Developer                                    Continued
+Free Code Camp
+ - Currently progressing through a full-stack web development certification
+   offered by freecodecamp.org
+ - Completed dozens of projects using JavaScript, HTML, CSS, Bootstrap, jQuery,
+   HTML, Pug and SCSS
+
+Pluralsight IQ Certified JavaScript Expert
+ - Scored 218 on the Pluralsight IQ skill test putting me in the 88th percentile
+   regarding JavaScript expertise
+
+Amal Career Prep Fellowship                             Feb 2017 - May 2017
+Amal Academy
+ - Education startup funded by Stanford University that teaches professional
+   skills to students and corporations.
+ - Successfully completed the fellowship and learned resume writing, cover
+   letter writing and interview strategies
+
+
+SKILLS AND TOOLS
+============================================================================
+JavaScript, ES6+, jQuery, React.js, Redux
+Node.js, Express.js, NodeBB
+HTML5, Pug, DTL, Mako temlates
+CSS3, SCSS, Less
+Python, Scrapy, Django, Open edX, WordPress
+Bootstrap 3
+PostgreSQL, SQLite, MongoDB
+Git, Docker, Vagrant, AWS, Heroku
+
