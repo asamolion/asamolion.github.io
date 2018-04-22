@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Asamolion's Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="inner-container">
+            <div class="menu-bar"></div>
+
+            <div class="button-container">
+                <div id="output">
+                    <!-- max length 25 for top-output -->
+                    <span id="top-output">
+                    <span id="double-left-arrow">&lt;&lt;</span>
+                    <span id="top-output-numbers"></span>
+                    </span>
+
+                    <span id="bottom-output"></span>
+                </div>
+
+                <button class="top-row disabled" disabled>MC</button>
+                <button class="top-row disabled" disabled>MR</button>
+                <button class="top-row disabled" disabled>MS</button>
+                <button class="top-row disabled" disabled>M+</button>
+                <button class="top-row disabled" disabled>M-</button>
+
+                <button id="left-arrow" class="operator">&larr;</button>
+                <button id="CE" class="operator">CE</button>
+                <button id="C" class="operator">C</button>
+                <button class="operator">&plusmn;</button>
+                <button class="operator">&radic;</button>
+
+                <button id="num7" class="input">7</button>
+                <button id="num8" class="input">8</button>
+                <button id="num9" class="input">9</button>
+                <button id="divide" class="operator">/</button>
+                <button class="operator">%</button>
+
+                <button id="num4" class="input">4</button>
+                <button id="num5" class="input">5</button>
+                <button id="num6" class="input">6</button>
+                <button id="multiply" class="operator">*</button>
+                <button id="inverse" class="operator">1/x</button>
+
+                <button id="num1" class="input">1</button>
+                <button id="num2" class="input">2</button>
+                <button id="num3" class="input">3</button>
+                <button id="minus" class="operator">-</button>
+                <button id="equals" class="operator">=</button>
+                <br>
+
+                <button id="num0" class="input">0</button>
+                <button id="point" class="input">.</button>
+                <button id="plus" class="operator">+</button>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/4.1.2/math.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
