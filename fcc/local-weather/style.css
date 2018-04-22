@@ -1,0 +1,27 @@
+@import "https://fonts.googleapis.com/css?family=Bungee";
+body {
+    background-color: #211e1e;
+    color: white;
+}
+
+.title {
+    font-family: Bungee, Georgia;
+    text-align: center;
+}
+
+.container {
+    margin-top: 5%;
+    text-align: center;
+}
+
+p {
+    font-family: cursive;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#FC {
+    cursor: pointer;
+    cursor: hand;
+    color: greenyellow;
+}

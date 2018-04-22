@@ -1,0 +1,64 @@
+@font-face {
+    font-family: Dimitri Swank;
+    src: url("./dimitri-swank-2.ttf") format("truetype");
+}
+
+body {
+    background-color: #6441a4;
+}
+
+.twitch-stream {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #00aff1;
+}
+
+.navbar-default .navbar-text {
+    color: #6441a4;
+    font-family: "Dimitri Swank", fantasy;
+    float: none;
+    text-align: center;
+}
+
+.panel-success .panel-body {
+    padding: 0;
+}
+
+.stream {
+    display: flex;
+    align-content: center;
+    width: 100%;
+    background-color: white;
+    height: 100px;
+}
+
+.stream div {
+    padding: 0;
+}
+
+div.stream:hover {
+    background-color: aquamarine;
+}
+
+.profile-pic,
+.stream-name,
+.stream-detail {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.truncate {
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.img-responsive {
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+}
