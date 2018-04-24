@@ -15,6 +15,19 @@ becoming a software engineer. I have extensive experience in both front-end
 and back-end technologies and have also dabbled in some DevOps. Read the rest of
 this resume to find out more about me.
 
+
+SKILLS AND TOOLS
+============================================================================
+JavaScript, ES6+, jQuery, React.js, Redux
+Node.js, Express.js, NodeBB
+HTML5, Pug, DTL, Mako temlates
+CSS3, SCSS, Less
+Python, Scrapy, Django, Open edX, WordPress
+Bootstrap 3
+PostgreSQL, SQLite, MongoDB
+Git, Docker, Vagrant, AWS, Heroku
+
+
 EXPERIENCE
 ============================================================================
 Arbisoft (Pvt) Ltd.                                  	Jun 2017 - Current
@@ -108,16 +121,4 @@ Amal Academy
    skills to students and corporations.
  - Successfully completed the fellowship and learned resume writing, cover
    letter writing and interview strategies
-
-
-SKILLS AND TOOLS
-============================================================================
-JavaScript, ES6+, jQuery, React.js, Redux
-Node.js, Express.js, NodeBB
-HTML5, Pug, DTL, Mako temlates
-CSS3, SCSS, Less
-Python, Scrapy, Django, Open edX, WordPress
-Bootstrap 3
-PostgreSQL, SQLite, MongoDB
-Git, Docker, Vagrant, AWS, Heroku
 
