@@ -16,6 +16,7 @@
         <hr>
         <ul>
             <li><a href="aalfylearning">Aalfylearning</a></li>
+            <li><a href="budidarmawan">Budidarmawan</a></li>
             <li><a href="charlieboyt">Charlieboyt</a></li>
             <li><a href="customgardensol">Customgardensol</a></li>
             <li><a href="quiglag">Quiglag</a></li>
@@ -23,17 +24,17 @@
         </ul>
     </div>
     <div id="right">
-        <iframe id="theIframe" src="charlieboyt/index.html" onload="resizeIframe(this)"></iframe>
+        <iframe id="theIframe" src="budidarmawan/index.html" onload="resizeIframe(this)"></iframe>
     </div>
     <script>
         var links = document.getElementsByTagName('a'),
             theIframe = document.getElementById('theIframe');
         for (var i = 0, length = links.length; i < length; i++) {
-            links[i].addEventListener('click', function(e) {
+            links[i].addEventListener('click', function (e) {
                 e.preventDefault();
                 theIframe.src = this.href + '/index.html';
                 resizeIFrameToFitContent(theIframe);
             });
-        }        
+        }
     </script>
 </body>
